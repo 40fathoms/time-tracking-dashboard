@@ -1,0 +1,92 @@
+html{
+    font-size: 100%;  // control zoom level
+    box-sizing: border-box; // include padding in final width
+    font-family: 'Rubik', sans-serif;
+}
+
+body{
+    margin: 0;
+    background-color: $veryDarkBlue;
+    color: $white;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.43rem;
+    grid-template-areas: 
+    "profile"
+    "dashboard"
+    "attribution";
+
+    @include breakpoint-up(large){
+        grid-template-columns: repeat(4, 1fr);  
+        grid-template-areas: 
+        "profile dashboard dashboard dashboard"
+        "attribution attribution attribution attribution";
+        padding: 0 11.59%;
+    }
+}
+
+.attribution{
+    grid-area: attribution;
+    justify-self: center;
+    font-size: 11px; 
+    a{ 
+        color: hsl(228, 45%, 44%); 
+    }
+}
+
+*, *::before, *::after{
+    box-sizing: inherit;
+}
+
+a, a:visited, a:hover{
+    text-decoration: none;
+}
+
+//Spacing
+.container{
+
+    max-width: 69.375rem;
+    margin: 0 auto;
+
+    &--pall{
+        padding-top: 4.375rem;
+        padding-right: 1.5rem;
+        padding-bottom: 4.375rem;
+        padding-left: 1.5rem;
+        @include breakpoint-up(large){
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+    }
+    &--py{
+        padding-top: 4.375rem;
+        padding-bottom: 4.375rem;
+        @include breakpoint-up(large){
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+    }
+    &--px{
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
+    }
+    &--pt{
+        padding-top: 4.375rem;
+        @include breakpoint-up(large){
+            padding-top: 6rem;
+        }
+    }
+    &--pr{
+        padding-right: 1.5rem;
+    }
+    &--pb{
+        padding-bottom: 4.375rem;
+        @include breakpoint-up(large){
+            padding-bottom: 6rem;
+        }
+    }
+    &--pl{
+        padding-left: 1.5rem;
+    }
+}

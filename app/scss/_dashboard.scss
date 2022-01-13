@@ -1,0 +1,143 @@
+.work{
+    background-color: $lightOrange;
+    background-image: url("../images/icon-work.svg");
+}
+.play{
+    background-color: $softBlue;
+    background-image: url("../images/icon-play.svg");
+}
+.study{
+    background-color: $lightRed;
+    background-image: url("../images/icon-study.svg");
+}
+.exercise{
+    background-color: $limeGreen;
+    background-image: url("../images/icon-exercise.svg");
+}
+.social{
+    background-color: $violet;
+    background-image: url("../images/icon-social.svg");
+}
+.self-care{
+    background-color: $softOrange;
+    background-image: url("../images/icon-self-care.svg");
+}
+
+
+.dashboard{
+
+    margin: 0 6% 5rem 6%;
+    grid-area: dashboard;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.43rem;
+
+    @include breakpoint-up(medium){
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint-up(large){
+        grid-template-columns: repeat(3, 1fr);
+
+        width: 57.21vw;
+        height: 32.125rem;  
+        margin: 20vh 0; 
+    }
+
+    &_activity{
+
+        border-radius: 1rem;
+
+        background-repeat: no-repeat;
+        background-position: 90% -5%;
+
+        &:hover{
+            cursor: pointer;
+            
+            .dashboard_content{
+                background-color: $desaturatedBlue;
+            }
+        }
+    }
+
+    &_content{
+        background-color: $darkBlue;
+        border-radius: 1rem;
+        margin-top: 2.6rem;
+        padding: 1.6125rem 1.4375rem;
+        height: calc(100% - 2.6rem);
+        transform: translate(0, 1%);
+    }
+
+    &_details{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        margin-bottom: 0.9rem;
+
+        &_title{
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+
+        img{
+            width: 1.3125rem;
+            height: 0.3125rem;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+
+    &_time{
+
+        &_day{
+            display: none;
+        }
+
+        &_week{
+            display: block;
+        }
+
+        &_month{
+            display: none;
+        }
+
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        @include breakpoint-up(large){
+            flex-direction: column;
+            align-items: start;
+            gap: 2rem;
+        }
+
+        &_current{
+            margin: 0;
+            font-size: 1.56rem;
+            font-weight: 300;
+
+            @include breakpoint-up(large){
+                font-size: 3.4rem;
+            }
+        }
+
+        &_previous{
+            font-size: 0.8rem;
+            font-weight: 300;
+            opacity: 75%;
+
+            @include breakpoint-up(large){
+                font-size: 1rem;
+            }
+        }
+    }
+}
